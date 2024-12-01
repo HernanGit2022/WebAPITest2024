@@ -10,6 +10,5 @@ namespace WebAPITest.Domain.Interfaces
         Task<State> CreateStateAsync(State state);
         Task<State> EditStateAsync(State state);
         Task<State> DeleteStateAsync(Guid Id);
-        Task GetStateByIdAsync();
     }
 }

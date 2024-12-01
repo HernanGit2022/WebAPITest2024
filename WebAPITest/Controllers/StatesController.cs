@@ -22,7 +22,7 @@ namespace WebAPITest.Controllers
             return Ok(state);
         }
         [HttpGet, ActionName("Get")]
-        [Route("GetById/{id}")] //URL: api/countries/Get
+        [Route("GetById/{id}")]
         public async Task<ActionResult<State>> GetStateByIdAsync(Guid id)
         {
             var state = await _stateService.GetStateByIdAsync(id);

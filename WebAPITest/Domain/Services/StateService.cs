@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 using WebAPITest.DAL;
 using WebAPITest.DAL.Entities;
 using WebAPITest.Domain.Interfaces;
@@ -37,6 +38,21 @@ namespace WebAPITest.Domain.Services
             }
         }
         public async Task<State> GetStateAsync(State state)
+        {
+            try
+            {
+                state.ID = Guid.NewGuid();
+                state.CreatedDate = DateTime.Now;
+                _context.States.Add(state);
+                await _context.SaveChangesAsync();
+                return state;
+            }
+            catch (DbUpdateException DbUpdateException)
+            {
+                throw new Exception(DbUpdateException.InnerException?.Message ?? DbUpdateException.Message);
+            }
+        }
+        public async Task<State> CreateStateAsync(State state)
         {
             try
             {

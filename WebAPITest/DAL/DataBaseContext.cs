@@ -16,7 +16,7 @@ namespace WebAPITest.DAL
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique(); //Aquí creo un índice del campo Name para la tabla Countries
-
+            modelBuilder.Entity<State>().HasIndex("Name","CountryId").IsUnique(); //Haciendo índice compuesto
         }
         #region DbSets
         //Se crea por cada una de las entidades para identificar que son tablas
