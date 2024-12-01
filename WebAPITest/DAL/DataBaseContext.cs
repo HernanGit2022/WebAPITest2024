@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShoppingAPI_Jueves_2023II.DAL.Entities;
+using WebAPITest.DAL.Entities;
 using WebAPITest.DAL.Entities;
 
 namespace WebAPITest.DAL
