@@ -76,8 +76,6 @@ namespace WebAPITest.Controllers
             var deletedCountry = await _countryService.DeleteCountryAsync(id);
             if (deletedCountry == null) return NotFound();
             return Ok(deletedCountry);
-
         }
-
     }
 }

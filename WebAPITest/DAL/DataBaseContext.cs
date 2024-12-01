@@ -21,6 +21,7 @@ namespace WebAPITest.DAL
         #region DbSets
         //Se crea por cada una de las entidades para identificar que son tablas
         public DbSet<Country> Countries { get; set; }
+        public DbSet<State> States { get; set; }
         #endregion
     }
 }
